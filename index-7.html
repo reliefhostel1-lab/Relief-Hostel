@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relief Hostel - الطائف</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Cairo", sans-serif;
+      }
+
+      body {
+        background: #0d0d0d;
+        color: #fff;
+        min-height: 100vh;
+      }
+
+      .hero {
+        min-height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+          url("https://i.postimg.cc/8zJwdcy2/bg.jpg") center / cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .content {
+        animation: fadeUp 1.2s ease;
+        max-width: 480px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+        padding: 35px 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .logo-img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 15px #042b008c);
+        animation:
+          floatLogo 4s ease-in-out infinite,
+          glowLogo 2s ease-in-out infinite alternate;
+        transition: transform 0.4s ease;
+      }
+
+      .logo-img:hover {
+        transform: scale(1.08) rotate(2deg);
+      }
+
+      @keyframes floatLogo {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes glowLogo {
+        0% {
+          filter: drop-shadow(0 0 10px #108b0081);
+        }
+        100% {
+          filter: drop-shadow(0 0 28px #108b0081);
+        }
+      }
+
+      h2 {
+        font-size: 26px;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+
+      .sub-text {
+        font-size: 17px;
+        opacity: 0.9;
+        line-height: 1.9;
+        margin-bottom: 25px;
+        color: #eee;
+      }
+
+      .cta-title {
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(to right, #ffd700, #ffb300);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.8));
+        animation: glowText 2s infinite alternate;
+        margin: 15px 0 10px;
+        display: inline-block;
+        letter-spacing: 2px;
+      }
+
+      @keyframes glowText {
+        from {
+          filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
+        }
+        to {
+          filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1));
+        }
+      }
+
+      .units-title {
+        font-size: 34px;
+        font-weight: 900;
+        color: #ffffff;
+        display: inline-block;
+        padding-bottom: 6px;
+        border-bottom: 3px dashed #d4af37;
+        animation: blinkBorder 1.8s infinite;
+        margin: 20px 0 12px;
+        letter-spacing: 2px;
+      }
+
+      @keyframes blinkBorder {
+        0%,
+        100% {
+          border-bottom-color: #d4af37;
+          text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+        50% {
+          border-bottom-color: #ffd700;
+          text-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+        }
+      }
+
+      .contact-details {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 20px 15px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .phone-number,
+      .booking-link {
+        font-size: 20px;
+        margin: 12px 0;
+        font-weight: 600;
+      }
+
+      .phone-number a,
+      .booking-link a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px dashed #d4af37;
+        transition: 0.3s;
+      }
+
+      .phone-number a:hover,
+      .booking-link a:hover {
+        color: #d4af37;
+        border-bottom-style: solid;
+      }
+
+      .yellow-circle-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+        align-items: center;
+      }
+
+      .circle-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 65px;
+        border-radius: 25px;
+        background: #d4af37d3;
+        color: #000;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.5;
+        box-shadow:
+          0 0 25px rgba(212, 175, 55, 0.6),
+          0 8px 20px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        border: 3px solid #fff;
+        animation: pulseGlow 2s infinite;
+      }
+
+      .circle-link:hover {
+        transform: scale(1.08);
+        box-shadow:
+          0 0 40px rgba(212, 175, 55, 0.9),
+          0 12px 28px rgba(0, 0, 0, 0.6);
+        background: #ffd700;
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          box-shadow:
+            0 0 25px rgba(212, 175, 55, 0.6),
+            0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        50% {
+          box-shadow:
+            0 0 40px rgba(212, 175, 55, 0.8),
+            0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        100% {
+          box-shadow:
+            0 0 25px rgba(212, 175, 55, 0.6),
+            0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      .info {
+        margin-top: 20px;
+        line-height: 2.2;
+        font-size: 17px;
+        opacity: 0.95;
+        color: #ddd;
+      }
+
+      .stars {
+        font-size: 22px;
+        letter-spacing: 4px;
+        color: #d4af37;
+      }
+
+      .footer-note {
+        margin-top: 20px;
+        font-size: 13px;
+        opacity: 0.6;
+        color: #aaa;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          padding: 25px 18px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+        .phone-number,
+        .booking-link {
+          font-size: 18px;
+        }
+        .cta-title {
+          font-size: 30px;
+        }
+        .units-title {
+          font-size: 28px;
+        }
+        .circle-link {
+          width: 80%;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="content">
+        <img
+          class="logo-img"
+          src="https://i.postimg.cc/RFZM5w2x/logo.png"
+          alt="شعار Relief Hostel"
+        />
+        <h2>اكتشف تجربة إقامة استثنائية</h2>
+        <p class="sub-text">
+          بين أحضان الطبيعة... احجز إقامتك اليوم واستمتع بالهدوء والإطلالات
+          الساحرة.
+        </p>
+
+        <div class="cta-title">احجز الآن</div>
+
+        <div class="contact-details">
+          <div class="phone-number">
+            <a href="tel:0532900245">
+              <i class="fa-solid fa-phone"></i>
+              حجز مباشر
+            </a>
+          </div>
+
+          <div class="booking-link">
+            <a
+              href="https://gathern.co/r/dUwdGn"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-link"></i>
+              رابط الحجز
+            </a>
+          </div>
+        </div>
+
+        <div class="yellow-circle-links">
+          <a
+            class="circle-link"
+            href="https://www.tiktok.com/@relief.hostel7?_r=1&_t=ZS-98DfZ9qfAJt"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+            TikTok
+          </a>
+        </div>
+
+        <div class="contact-details">
+          <div class="phone-number">
+            <a
+              href="https://drive.google.com/file/d/1RJnAC9XQsZ1bPF6A7ZzWjxrSNUkbl6Dz/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener"
+            >
+              <!-- <i class="fa-solid fa-house-chimney"></i> -->
+              🏠 Relief Hostel-1
+            </a>
+          </div>
+
+          <div class="booking-link">
+            <a
+              href="https://drive.google.com/file/d/1tzPKoniJK0wrDjAvj7lzcfZVRMWCBrSO/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener"
+            >
+              🏠 Relief Hostel-2
+            </a>
+          </div>
+        </div>
+
+        <div class="info">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+
+          <br />
+          تقييم 5 نجوم
+
+          <br /><br />
+
+          📍 الشفاء - الطائف
+        </div>
+        <div class="footer-note">© 2026 Relief Hostel</div>
+      </div>
+    </section>
+  </body>
+</html>
